@@ -5,14 +5,14 @@ using UnityEngine;
 public class School : MonoBehaviour {
 
 	public int Cost = 200000;
-	public int Maintainance = 20000;
+	public int Maintainance = 50000;
 	public int Produce = 10;
 
 	public static List<School> _schoolList;
 
 	// Use this for initialization
 	void Start () {
-		if (_schoolList = null)
+		if (_schoolList == null)
 			_schoolList = new List<School> ();
 
 		_schoolList.Add (this);
@@ -20,6 +20,10 @@ public class School : MonoBehaviour {
 
 	public static List<School> getList()
 	{
+		if (_schoolList == null) {
+			_schoolList = new List<School> ();
+		}
+
 		return _schoolList;
 	}
 }

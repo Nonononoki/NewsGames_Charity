@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Resources : MonoBehaviour {
 
-	public int Population;
-	public int Money;
-	public int Food;
-	public int Water;
-	public int Education;
+	public int Population = 1000;
+	public int Money = 400000;
+	public int Food = 0;
+	public int Water = 0;
+	public int Education = 0;
 
 	public float PopulationIncrease = 1.1f; //increase in percentage
 	public int MoneyIncrease = 400000;
@@ -20,21 +20,15 @@ public class Resources : MonoBehaviour {
 	public int MoneyDecrease = 0;
 	public int FoodDecrease = 0;
 	public int WaterDecrease = 0;
-	public int EducationDecrease;
+	public int EducationDecrease = 0;
 
 	// Use this for initialization
 	void Start () {
-		//set default resources
-		Population = 1000;
-		Money = 400000;
-		Water = 0;
-		Food = 0;
-		Education = 0;
 	}
 
 	private void Reset()
 	{
-		MoneyIncrease = 0;
+		MoneyIncrease = 400000;
 		FoodIncrease = 0;
 		WaterIncrease = 0;
 		EducationIncrease = 0;
@@ -45,17 +39,45 @@ public class Resources : MonoBehaviour {
 		EducationDecrease = 0;
 	}
 
-	void Apply() //Apply changes
+	public void Apply() //Apply changes
 	{
-		Population = Population * (PopulationIncrease - PopulationDecrease);
-
-		//decrease
+		Population = (int)(Population * (PopulationIncrease - PopulationDecrease));
 
 		Money += MoneyIncrease - MoneyDecrease;
-		Food += FoodDecrease - FoodDecrease;
+		Food += FoodIncrease - FoodDecrease;
 		Water += WaterIncrease - WaterDecrease;
 		Education += EducationIncrease - EducationDecrease;
 
 		Reset ();
+	}
+
+	public void Print()
+	{
+		Debug.Log ("Food:" + Food);
+		Debug.Log ("Water:" + Water);
+		Debug.Log ("Money:" + Money);
+		Debug.Log ("Education:" + Education);
+		Debug.Log ("Population:" + Population);
+	}
+
+	public void ConvertToMoney()
+	{
+		//if money or food is below 0
+		int factor = 200;
+
+		if (Food < 0) {
+			int penalty = factor * -(Food);
+			Money -= penalty;
+			Food = 0;
+			Debug.Log ("Spent " + penalty + " because of food shortage"); 
+		}
+
+		if (Water < 0) {
+			int penalty = factor * -(Water);
+			Money -= penalty;
+			Water = 0;
+			Debug.Log ("Spent " + penalty + " because of water shortage"); 
+		}
+
 	}
 }
