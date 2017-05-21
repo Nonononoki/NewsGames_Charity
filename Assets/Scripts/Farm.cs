@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Farm : MonoBehaviour {
 
-	public int 
 	// Use this for initialization
 	void Start () {
 		
