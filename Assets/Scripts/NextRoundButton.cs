@@ -75,4 +75,9 @@ public class NextRoundButton : MonoBehaviour {
 		else
 			return false;
 	}
+
+	void OnMouseDown()
+	{
+		NextRound ();
+	}
 }

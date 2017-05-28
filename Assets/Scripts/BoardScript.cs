@@ -7,6 +7,7 @@ public class BoardScript : MonoBehaviour {
 	public int width;
 	public int height;
 	public GameObject normalfield;
+	public GameObject objectToBuild;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,6 @@ public class BoardScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 }

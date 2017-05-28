@@ -5,9 +5,11 @@ using UnityEngine;
 public class Field : MonoBehaviour {
 
 	bool hasObject=false;
-	public Transform cube;
+	GameObject building;
+	BoardScript boardScript;
 	void Start () {
-
+		GameObject board = GameObject.Find ("Board");
+		boardScript =(BoardScript) board.GetComponent (typeof(BoardScript));
 	}
 
 	// Update is called once per frame
@@ -19,8 +21,12 @@ public class Field : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		if (hasObject == false) {
-			Instantiate (cube, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
+		building = boardScript.objectToBuild;
+		if (hasObject == false && building!=null) {
+			
+			Instantiate (building, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
+
+			Debug.Log (building.name);
 		}
 		hasObject = true;
 	}

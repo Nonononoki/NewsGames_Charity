@@ -22,8 +22,22 @@ public class Resources : MonoBehaviour {
 	public int WaterDecrease = 0;
 	public int EducationDecrease = 0;
 
+	public GUIText populationText;
+	public GUIText moneyText;
+	public GUIText foodText;
+	public GUIText waterText;
+	public GUIText educationText;
+
 	// Use this for initialization
 	void Start () {
+	}
+
+	void Update(){
+		populationText.text= "Population: "+ Population+" / "+ (PopulationIncrease-PopulationDecrease) ;
+		moneyText.text = "Money: " + Money+" / "+ (MoneyIncrease-MoneyDecrease) ;
+		foodText.text = "Food: " + Food+" / "+ (FoodIncrease-FoodDecrease) ;
+		waterText.text = "Water: " + Water+" / "+ (WaterIncrease-WaterDecrease) ;
+		educationText.text = "Education: " + Education+" / "+ (EducationIncrease-EducationDecrease) ;
 	}
 
 	private void Reset()
