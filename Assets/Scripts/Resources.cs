@@ -22,26 +22,27 @@ public class Resources : MonoBehaviour {
 	public int WaterDecrease = 0;
 	public int EducationDecrease = 0;
 
-	public GUIText populationText;
-	public GUIText moneyText;
-	public GUIText foodText;
-	public GUIText waterText;
-	public GUIText educationText;
+	public TextMesh populationText;
+	public TextMesh moneyText;
+	public TextMesh foodText;
+	public TextMesh waterText;
+	public TextMesh educationText;
 
-	public GUIText populationIncreaseText;
-	public GUIText moneyIncreaseText;
-	public GUIText foodIncreaseText;
-	public GUIText waterIncreaseText;
-	public GUIText educationIncreaseText;
+	public TextMesh populationIncreaseText;
+	public TextMesh moneyIncreaseText;
+	public TextMesh foodIncreaseText;
+	public TextMesh waterIncreaseText;
+	public TextMesh educationIncreaseText;
 
 	// Use this for initialization
 	void Start () {
 	}
 
-	void Update(){
+	void Update()
+	{
 		populationText.text= Population.ToString();
 		moneyText.text = Money.ToString ();
-			foodText.text = Food.ToString();
+		foodText.text = Food.ToString();
 		waterText.text = Water.ToString();
 		educationText.text = Education.ToString();
 
