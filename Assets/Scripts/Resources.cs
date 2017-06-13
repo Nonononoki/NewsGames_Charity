@@ -28,16 +28,29 @@ public class Resources : MonoBehaviour {
 	public GUIText waterText;
 	public GUIText educationText;
 
+	public GUIText populationIncreaseText;
+	public GUIText moneyIncreaseText;
+	public GUIText foodIncreaseText;
+	public GUIText waterIncreaseText;
+	public GUIText educationIncreaseText;
+
 	// Use this for initialization
 	void Start () {
 	}
 
 	void Update(){
-		populationText.text= "Population: "+ Population+" / "+ (PopulationIncrease-PopulationDecrease) ;
-		moneyText.text = "Money: " + Money+" / "+ (MoneyIncrease-MoneyDecrease) ;
-		foodText.text = "Food: " + Food+" / "+ (FoodIncrease-FoodDecrease) ;
-		waterText.text = "Water: " + Water+" / "+ (WaterIncrease-WaterDecrease) ;
-		educationText.text = "Education: " + Education+" / "+ (EducationIncrease-EducationDecrease) ;
+		populationText.text= Population.ToString();
+		moneyText.text = Money.ToString ();
+			foodText.text = Food.ToString();
+		waterText.text = Water.ToString();
+		educationText.text = Education.ToString();
+
+		populationIncreaseText.text= (PopulationIncrease-PopulationDecrease).ToString() ;
+		moneyIncreaseText.text = (MoneyIncrease-MoneyDecrease).ToString() ;
+		foodIncreaseText.text = (FoodIncrease-FoodDecrease).ToString() ;
+		waterIncreaseText.text = (WaterIncrease-WaterDecrease).ToString() ;
+		educationIncreaseText.text =(EducationIncrease-EducationDecrease).ToString() ;
+
 	}
 
 	private void Reset()
