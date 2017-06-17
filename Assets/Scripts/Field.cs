@@ -7,8 +7,11 @@ public class Field : MonoBehaviour {
 	bool hasObject=false;
 	GameObject building;
 	BoardScript boardScript;
+	GameObject resources;
+
 	void Start () {
 		GameObject board = GameObject.Find ("Board");
+		resources = GameObject.Find ("Resources");
 		boardScript =(BoardScript) board.GetComponent (typeof(BoardScript));
 	}
 
@@ -21,14 +24,20 @@ public class Field : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
+		Resources r = resources.GetComponent<Resources> ();
+
 		building = boardScript.objectToBuild;
-		if (hasObject == false && building!=null) {
+
+		//can only build if you have some money
+		if (hasObject == false && building!=null && r.Money > 0) {
 			
 			Instantiate (building, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
 
-			Debug.Log (building.name);
 		}
+
 		hasObject = true;
+
+		r.Apply ();
 	}
 
 

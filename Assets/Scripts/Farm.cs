@@ -11,11 +11,18 @@ public class Farm : MonoBehaviour {
 	public static List<Farm> _farmList;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		if (_farmList == null)
 			_farmList = new List<Farm> ();
 
 		_farmList.Add (this);
+
+		//subtract money
+		GameObject resources = GameObject.Find ("Resources");
+		Resources r = resources.GetComponent<Resources> ();
+		r.Money -= Cost;
+
+		Debug.Log ("Farm");
 	}
 
 	public static List<Farm> getList()

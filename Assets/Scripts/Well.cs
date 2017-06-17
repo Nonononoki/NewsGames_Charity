@@ -11,11 +11,18 @@ public class Well : MonoBehaviour {
 	public static List<Well> _wellList;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		if (_wellList == null)
 			_wellList = new List<Well> ();
 
 		_wellList.Add (this);
+
+		//subtract money
+		GameObject resources = GameObject.Find ("Resources");
+		Resources r = resources.GetComponent<Resources> ();
+		r.Money -= Cost;
+
+		Debug.Log ("Well");
 	}
 
 	public static List<Well> getList()

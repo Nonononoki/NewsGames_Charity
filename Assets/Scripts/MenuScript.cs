@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuScript : MonoBehaviour {
+	/*
 
 	public NextRoundButton nrb;
 
@@ -61,4 +62,5 @@ public class MenuScript : MonoBehaviour {
 			"Die Schule erhoeht jede Runde den Bildungsgrad, ist dieser bei 100% angelangt ist das Spiel gewonnen.\n" +
 			"Gebauede besitzen Bebauungs- und Verwaltungskosten.");
 	}
+	*/
 }

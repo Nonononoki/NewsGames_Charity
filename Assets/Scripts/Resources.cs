@@ -36,22 +36,12 @@ public class Resources : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Apply ();
 	}
+
 
 	void Update()
 	{
-		populationText.text= Population.ToString();
-		moneyText.text = Money.ToString ();
-		foodText.text = Food.ToString();
-		waterText.text = Water.ToString();
-		educationText.text = Education.ToString();
-
-		populationIncreaseText.text= (PopulationIncrease-PopulationDecrease).ToString() ;
-		moneyIncreaseText.text = (MoneyIncrease-MoneyDecrease).ToString() ;
-		foodIncreaseText.text = (FoodIncrease-FoodDecrease).ToString() ;
-		waterIncreaseText.text = (WaterIncrease-WaterDecrease).ToString() ;
-		educationIncreaseText.text =(EducationIncrease-EducationDecrease).ToString() ;
-
 	}
 
 	private void Reset()
@@ -62,21 +52,45 @@ public class Resources : MonoBehaviour {
 		EducationIncrease = 0;
 
 		MoneyDecrease = 0;
-		FoodDecrease = 0;
-		WaterDecrease = 0;
+		FoodDecrease = Population;
+		WaterDecrease = Population;
 		EducationDecrease = 0;
+
 	}
 
 	public void Apply() //Apply changes
 	{
-		Population = (int)(Population * (PopulationIncrease - PopulationDecrease));
-
-		Money += MoneyIncrease - MoneyDecrease;
-		Food += FoodIncrease - FoodDecrease;
-		Water += WaterIncrease - WaterDecrease;
-		Education += EducationIncrease - EducationDecrease;
-
+		Debug.Log ("Applying...");
 		Reset ();
+
+		populationText.text= Population.ToString();
+		moneyText.text = Money.ToString ();
+		foodText.text = Food.ToString();
+		waterText.text = Water.ToString();
+		educationText.text = Education.ToString();
+
+			
+		if(Farm._farmList != null)
+			foreach (Farm f in Farm._farmList) {
+				FoodIncrease += f.Produce;
+				MoneyDecrease += f.Maintainance;
+			}
+		if(Well._wellList != null)
+			foreach (Well w in Well._wellList) {
+				WaterIncrease += w.Produce;
+				MoneyDecrease += w.Maintainance;
+			}
+		if(School._schoolList != null)
+			foreach (School s in School._schoolList) {
+				EducationIncrease += s.Produce;
+				MoneyDecrease += s.Maintainance;
+			}
+
+		foodIncreaseText.text = (FoodIncrease - FoodDecrease).ToString() ;
+		waterIncreaseText.text = (WaterIncrease - WaterDecrease).ToString() ;
+		educationIncreaseText.text = (EducationIncrease - EducationDecrease).ToString();
+		populationIncreaseText.text= ((int)-(Population - Population*(PopulationIncrease - PopulationDecrease))).ToString();
+		moneyIncreaseText.text = (MoneyIncrease-MoneyDecrease).ToString();
 	}
 
 	public void Print()
@@ -91,7 +105,7 @@ public class Resources : MonoBehaviour {
 	public void ConvertToMoney()
 	{
 		//if money or food is below 0
-		int factor = 200;
+		const int factor = 200;
 
 		if (Food < 0) {
 			int penalty = factor * -(Food);
