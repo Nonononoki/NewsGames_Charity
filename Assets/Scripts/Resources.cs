@@ -102,16 +102,17 @@ public class Resources : MonoBehaviour {
 		Debug.Log ("Population:" + Population);
 	}
 
-	public void ConvertToMoney()
+	public void ConvertToMoney(ref string s)
 	{
 		//if money or food is below 0
-		const int factor = 200;
+		const int factor = 150;
 
 		if (Food < 0) {
 			int penalty = factor * -(Food);
 			Money -= penalty;
 			Food = 0;
-			Debug.Log ("Spent " + penalty + " because of food shortage"); 
+			Debug.Log ("Spent " + penalty + " because of food shortage");
+			s += ("Spent " + penalty + " \n because of food shortage! \n");
 		}
 
 		if (Water < 0) {
@@ -119,6 +120,7 @@ public class Resources : MonoBehaviour {
 			Money -= penalty;
 			Water = 0;
 			Debug.Log ("Spent " + penalty + " because of water shortage"); 
+			s += ("Spent " + penalty + "\n because of water shortage! \n");
 		}
 
 	}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class NextRoundButton : MonoBehaviour {
 
 	public Resources Resources;
+	public infoBox ib;
 
 	public void NextRound()
 	{
@@ -23,16 +24,29 @@ public class NextRoundButton : MonoBehaviour {
 
 		Debug.Log (Resources.MoneyDecrease + "Euros lost because of maintenance!");
 
-		Resources.ConvertToMoney();
-		Resources.Print ();
-		Resources.Apply ();
+		string s = "";
 
+		Resources.Print ();
+		//Apply penalty
+		if(Resources.Food < 0 || Resources.Water < 0)
+		{
+			Resources.ConvertToMoney(ref s);
+			ib.Show(s);
+		} 
 		//win/Lose condition
-		if (Lose ())
+		if (Lose ()) {
+			s = "No money left, you lost!";
 			Debug.Log ("No money left, you lost!");
-		else if (Win ())
-			Debug.Log ("Education level reached 100%! You Win!");
-		
+
+			ib.Show (s);
+		}else if (Win ()) {
+			s = "Everyone is educated! You Win!";
+			Debug.Log ("Everyone is educated! You Win!");
+
+			ib.Show(s);
+		}
+
+		Resources.Apply ();
 	} 
 
 	bool Lose()
@@ -45,7 +59,7 @@ public class NextRoundButton : MonoBehaviour {
 
 	bool Win()
 	{
-		if (Resources.Education >= 100)
+		if (Resources.Education >= Resources.Population)
 			return true;
 		else
 			return false;

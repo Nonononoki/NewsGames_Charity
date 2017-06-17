@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Well : MonoBehaviour {
 
-	public int Cost = 50000;
-	public int Maintainance = 10000;
-	public int Produce = 200;
+	public int Cost { private set; get; }
+	public int Maintainance { private set; get; }
+	public int Produce { private set; get; }
 
 	public static List<Well> _wellList;
 
 	// Use this for initialization
 	void Awake () {
+
+		Cost = 50000;
+		Maintainance = 10000;
+		Produce = 200;
+
 		if (_wellList == null)
 			_wellList = new List<Well> ();
 
