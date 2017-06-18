@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Village : Building {
+public class Building : MonoBehaviour {
 
+	public Field field;
+	public float multiplier;
 
 	// Use this for initialization
 	void Start () {

@@ -72,8 +72,8 @@ public class Resources : MonoBehaviour {
 			
 		if(Farm._farmList != null)
 			foreach (Farm f in Farm._farmList) {
-				FoodIncrease += f.Produce;
-				MoneyDecrease += f.Maintainance;
+				FoodIncrease += (int)f.Produce;
+				MoneyDecrease += (int)f.Maintainance;
 			}
 		if(Well._wellList != null)
 			foreach (Well w in Well._wellList) {

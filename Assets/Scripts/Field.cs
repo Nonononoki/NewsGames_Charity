@@ -9,6 +9,7 @@ public class Field : MonoBehaviour {
 	BoardScript boardScript;
 	GameObject resources;
 	public Vector2 position;
+	public float multiplier;
 
 
 
@@ -27,24 +28,25 @@ public class Field : MonoBehaviour {
 	}
 
 	public void Build(GameObject pBuilding){
-		building = pBuilding;
-		Instantiate (building, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
-		hasObject = true;
+		building =Instantiate (pBuilding, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
+
+		var script=building.GetComponent<Building>();
+		script.multiplier = multiplier;
 	}
 
 	void OnMouseDown(){
 		Resources r = resources.GetComponent<Resources> ();
 
-		building = boardScript.objectToBuild;
+
 
 		//can only build if you have some money
-		if (hasObject == false && building!=null && r.Money > 0) {
+		if (hasObject == false && boardScript.objectToBuild!=null && r.Money > 0) {
 			
-			Instantiate (building, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
+			Build (boardScript.objectToBuild);
 
 		}
 
-		hasObject = true;
+
 
 		r.Apply ();
 	}

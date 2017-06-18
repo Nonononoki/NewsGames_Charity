@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Well : MonoBehaviour {
+public class Well : Building {
 
 	public int Cost { private set; get; }
 	public int Maintainance { private set; get; }

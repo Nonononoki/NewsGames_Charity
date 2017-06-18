@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoardScript.cs" />
      <Compile Include="Assets\Scripts\BuildButton.cs" />
+     <Compile Include="Assets\Scripts\Building.cs" />
      <Compile Include="Assets\Scripts\Farm.cs" />
      <Compile Include="Assets\Scripts\Field.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />

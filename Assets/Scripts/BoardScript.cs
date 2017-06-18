@@ -6,7 +6,9 @@ public class BoardScript : MonoBehaviour {
 
 	public int width;
 	public int height;
-	public GameObject normalfield;
+	public GameObject normalField;
+	public GameObject goodField;
+	public GameObject badField;
 	public GameObject objectToBuild;
 	public int villageAmount;
 	GameObject[,] fields;
@@ -14,20 +16,50 @@ public class BoardScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		int goods = villageAmount * 2;
+		int bads = villageAmount * 2;
 		fields = new GameObject[width,height];
 		float posX = 0;
 		float posY = 0;
 		for (int i=0; i<width;i++)
 		{
 			posX = 0;
+
+
 			for (int j = 0; j < width; j++) {
-				GameObject field = Instantiate (normalfield, new Vector3 (posX,posY,0), Quaternion.identity);
+				GameObject field = Instantiate (normalField, new Vector3 (posX,posY,0), Quaternion.identity);
 				field.GetComponent<Field>().position = new Vector2 (posX, posY);
 				fields [i,j] = field;
-				posX+=normalfield.GetComponent<SpriteRenderer>().bounds.size.x;
+				posX+=normalField.GetComponent<SpriteRenderer>().bounds.size.x;
 			}
-			posY+=normalfield.GetComponent<SpriteRenderer>().bounds.size.y;
+			posY+=normalField.GetComponent<SpriteRenderer>().bounds.size.y;
 		}
+
+
+		for (int i = 0; i < goods; i++) {
+			int x = Random.Range (0, width - 1);
+			int y = Random.Range (0, height - 1);
+
+			if (fields[x,y].gameObject.tag!="good") {
+				Vector3 pos = fields [x, y].gameObject.transform.position;
+				Destroy (fields [x, y].gameObject);
+				fields[x,y]=Instantiate(goodField, pos, Quaternion.identity);
+			} else
+				i--;
+		}
+
+		for (int i = 0; i < bads; i++) {
+			int x = Random.Range (0, width - 1);
+			int y = Random.Range (0, height - 1);
+
+			if (fields[x,y].gameObject.tag!="good" && fields[x,y].gameObject.tag!="bad") {
+				Vector3 pos = fields [x, y].gameObject.transform.position;
+				Destroy (fields [x, y].gameObject);
+				fields[x,y]=Instantiate(badField, pos, Quaternion.identity);
+			} else
+				i--;
+		}
+
 
 		CreateVillages ();
 	}
@@ -41,8 +73,11 @@ public class BoardScript : MonoBehaviour {
 
 			if (!fieldScript.hasObject) {
 				fieldScript.Build (village);
-			} else
+				Debug.Log ("ayyy");
+			} else {
 				i--;
+
+			}
 		}
 	
 	}

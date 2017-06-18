@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class School : MonoBehaviour {
+public class School : Building {
 
 	public int Cost { private set; get; }
 	public int Maintainance { private set; get; }
 	public int Produce { private set; get; }
+
 
 	public static List<School> _schoolList;
 
