@@ -42,6 +42,19 @@ public class Resources : MonoBehaviour {
 
 	void Update()
 	{
+		Apply ();
+	
+		populationText.text= Population.ToString();
+		moneyText.text = Money.ToString ();
+		foodText.text = Food.ToString();
+		waterText.text = Water.ToString();
+		educationText.text = Education.ToString();
+
+		foodIncreaseText.text = (FoodIncrease - FoodDecrease).ToString() ;
+		waterIncreaseText.text = (WaterIncrease - WaterDecrease).ToString() ;
+		educationIncreaseText.text = (EducationIncrease - EducationDecrease).ToString();
+		populationIncreaseText.text= ((int)-(Population - Population*(PopulationIncrease - PopulationDecrease))).ToString();
+		moneyIncreaseText.text = (MoneyIncrease-MoneyDecrease).ToString();
 	}
 
 	private void Reset()
@@ -60,14 +73,9 @@ public class Resources : MonoBehaviour {
 
 	public void Apply() //Apply changes
 	{
-		Debug.Log ("Applying...");
 		Reset ();
 
-		populationText.text= Population.ToString();
-		moneyText.text = Money.ToString ();
-		foodText.text = Food.ToString();
-		waterText.text = Water.ToString();
-		educationText.text = Education.ToString();
+
 
 			
 		if(Farm._farmList != null)
@@ -77,8 +85,8 @@ public class Resources : MonoBehaviour {
 			}
 		if(Well._wellList != null)
 			foreach (Well w in Well._wellList) {
-				WaterIncrease += w.Produce;
-				MoneyDecrease += w.Maintainance;
+				WaterIncrease += (int)w.Produce;
+				MoneyDecrease += (int)w.Maintainance;
 			}
 		if(School._schoolList != null)
 			foreach (School s in School._schoolList) {
@@ -86,11 +94,7 @@ public class Resources : MonoBehaviour {
 				MoneyDecrease += s.Maintainance;
 			}
 
-		foodIncreaseText.text = (FoodIncrease - FoodDecrease).ToString() ;
-		waterIncreaseText.text = (WaterIncrease - WaterDecrease).ToString() ;
-		educationIncreaseText.text = (EducationIncrease - EducationDecrease).ToString();
-		populationIncreaseText.text= ((int)-(Population - Population*(PopulationIncrease - PopulationDecrease))).ToString();
-		moneyIncreaseText.text = (MoneyIncrease-MoneyDecrease).ToString();
+
 	}
 
 	public void Print()

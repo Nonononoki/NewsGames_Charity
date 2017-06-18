@@ -20,7 +20,7 @@ public class Farm : Building {
 		Cost = baseCost * multiplier;
 		Maintainance = 50000;
 		baseProduce = 400;
-		Produce = (int)((float)baseProduce * multiplier);
+		Produce = baseProduce * multiplier;
 
 		if (_farmList == null)
 			_farmList = new List<Farm> ();

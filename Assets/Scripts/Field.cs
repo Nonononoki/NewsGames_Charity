@@ -32,6 +32,7 @@ public class Field : MonoBehaviour {
 
 		var script=building.GetComponent<Building>();
 		script.multiplier = multiplier;
+		hasObject = true;
 	}
 
 	void OnMouseDown(){
