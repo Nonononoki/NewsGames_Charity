@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Field : MonoBehaviour {
 
-	bool hasObject=false;
+	public bool hasObject=false;
 	GameObject building;
 	BoardScript boardScript;
 	GameObject resources;
+	public Vector2 position;
+
+
 
 	void Start () {
 		GameObject board = GameObject.Find ("Board");
@@ -21,6 +24,12 @@ public class Field : MonoBehaviour {
 
 
 
+	}
+
+	public void Build(GameObject pBuilding){
+		building = pBuilding;
+		Instantiate (building, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
+		hasObject = true;
 	}
 
 	void OnMouseDown(){
