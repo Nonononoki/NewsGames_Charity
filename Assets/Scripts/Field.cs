@@ -28,7 +28,7 @@ public class Field : MonoBehaviour {
 	}
 
 	public void Build(GameObject pBuilding){
-		building =Instantiate (pBuilding, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
+		building = Instantiate (pBuilding, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
 
 		var script=building.GetComponent<Building>();
 		script.multiplier = multiplier;

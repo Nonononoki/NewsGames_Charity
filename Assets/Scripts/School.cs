@@ -12,7 +12,7 @@ public class School : Building {
 	public static List<School> _schoolList;
 
 	// Use this for initialization
-	void Awake () {
+	void Start() {
 
 		Produce = 200;
 		Cost = 200000;

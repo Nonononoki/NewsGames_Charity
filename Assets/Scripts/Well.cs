@@ -13,7 +13,7 @@ public class Well : Building {
 	public static List<Well> _wellList;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 
 		baseCost = 50000;
 		Cost = baseCost*multiplier;

@@ -12,7 +12,10 @@ public class infoButton : MonoBehaviour {
 		s = "Build buildings to sustain the life \n" +
 		"of a village in Africa. \n" +
 		"Win: Education >= population. \n" +
-		"Lose: Money <= 0";
+		"Lose: Money <= 0 \n" +
+		"Red: -Base cost, -Production \n" +
+		"Green: +Base cost, +Production \n" +
+		"Schools are not affected \n";
 	}
 	
 	// Update is called once per frame

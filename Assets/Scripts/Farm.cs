@@ -14,7 +14,7 @@ public class Farm : Building {
 	public static List<Farm> _farmList;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 
 		baseCost = 100000;
 		Cost = baseCost * multiplier;
