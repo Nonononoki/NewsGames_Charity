@@ -31,15 +31,16 @@ public class NextRoundButton : MonoBehaviour {
 		if(Resources.Food < 0 || Resources.Water < 0)
 		{
 			Resources.ConvertToMoney(ref s);
+			if (Lose ()) {
+				s = "No money left, you lost!";
+				Debug.Log ("No money left, you lost!");
+
+				ib.Show (s);
+			}
 			ib.Show(s);
 		} 
 		//win/Lose condition
-		if (Lose ()) {
-			s = "No money left, you lost!";
-			Debug.Log ("No money left, you lost!");
-
-			ib.Show (s);
-		}else if (Win ()) {
+		if (Win ()) {
 			s = "Everyone is educated! You Win!";
 			Debug.Log ("Everyone is educated! You Win!");
 

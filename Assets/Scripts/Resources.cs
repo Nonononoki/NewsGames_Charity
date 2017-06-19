@@ -127,5 +127,7 @@ public class Resources : MonoBehaviour {
 			s += ("Spent " + penalty + "\n because of water shortage! \n");
 		}
 
+
+
 	}
 }
