@@ -13,13 +13,15 @@ public class Field : MonoBehaviour {
 	public AudioClip clickSound;
 	AudioSource source;
 
-
+	void Awake(){
+		source = GetComponent<AudioSource> ();
+	}
 
 	void Start () {
 		GameObject board = GameObject.Find ("Board");
 		resources = GameObject.Find ("Resources");
 		boardScript =(BoardScript) board.GetComponent (typeof(BoardScript));
-		source = GetComponent<AudioSource> ();
+
 	}
 
 	// Update is called once per frame
