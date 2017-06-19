@@ -6,10 +6,12 @@ public class BuildButton : MonoBehaviour {
 
 	public GameObject board;
 	public GameObject building;
+	AudioSource source;
+	public AudioClip click;
 
 	// Use this for initialization
 	void Start () {
-
+		source = GetComponent<AudioSource> ();
 	}
 
 	// Update is called once per frame
@@ -21,5 +23,6 @@ public class BuildButton : MonoBehaviour {
 	{
 		BoardScript boardScript = (BoardScript)board.GetComponent (typeof(BoardScript));
 		boardScript.objectToBuild = building;
+		source.PlayOneShot (click);
 	}
 }

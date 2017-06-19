@@ -10,6 +10,8 @@ public class Field : MonoBehaviour {
 	GameObject resources;
 	public Vector2 position;
 	public float multiplier;
+	public AudioClip clickSound;
+	AudioSource source;
 
 
 
@@ -17,6 +19,7 @@ public class Field : MonoBehaviour {
 		GameObject board = GameObject.Find ("Board");
 		resources = GameObject.Find ("Resources");
 		boardScript =(BoardScript) board.GetComponent (typeof(BoardScript));
+		source = GetComponent<AudioSource> ();
 	}
 
 	// Update is called once per frame
@@ -29,10 +32,11 @@ public class Field : MonoBehaviour {
 
 	public void Build(GameObject pBuilding){
 		building = Instantiate (pBuilding, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
-
 		var script=building.GetComponent<Building>();
 		script.multiplier = multiplier;
 		hasObject = true;
+		source.PlayOneShot (clickSound);
+
 	}
 
 	void OnMouseDown(){
