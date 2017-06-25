@@ -69,6 +69,16 @@ public class bigInfoBox : MonoBehaviour {
 	{
 		Scene loadedLevel = SceneManager.GetActiveScene ();
 		SceneManager.LoadScene (loadedLevel.name);
+
+		if (Farm._farmList != null)
+			Farm._farmList.Clear ();
+
+		if (School._schoolList != null)
+			School._schoolList.Clear ();
+
+
+		if (Well._wellList != null)
+			Well._wellList.Clear ();
 	}
 
 
