@@ -20,7 +20,7 @@ public class Farm : Building {
 
 		Cost = baseCost * multiplier*multiplier;
 
-		Maintainance = baseMaintainance * distance;
+		Maintainance = baseMaintainance * (0.5f + 0.5f*distance);
 
 		Produce = baseProduce * multiplier;
 

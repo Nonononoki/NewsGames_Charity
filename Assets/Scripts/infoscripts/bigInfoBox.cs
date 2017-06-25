@@ -10,11 +10,13 @@ public class bigInfoBox : MonoBehaviour {
 	public bool reset;
 
 	private BoxCollider2D col;
-
+	AudioSource source;
+	public AudioClip clip;
 	private string s;
 
 	// Use this for initialization
 	void Start () {
+		source = GetComponent<AudioSource>();
 		reset = false;
 		col = gameObject.GetComponent<BoxCollider2D> ();
 
@@ -33,6 +35,10 @@ public class bigInfoBox : MonoBehaviour {
 			;
 
 		Show (s);
+		source.clip = clip;
+		source.volume = 0.7f;
+		source.loop = true;
+		source.Play();
 	}
 
 	// Update is called once per frame
@@ -45,6 +51,7 @@ public class bigInfoBox : MonoBehaviour {
 		tm.text = "";
 		sr.color = new Color (1f, 1f, 1f, 0f);
 		col.enabled = false;
+
 	}
 
 	public void Show(string s)
@@ -52,6 +59,7 @@ public class bigInfoBox : MonoBehaviour {
 		sr.color = new Color (1f, 1f, 1f, 1f);
 		tm.text = s;
 		col.enabled = true;
+
 	}
 
 
@@ -67,6 +75,8 @@ public class bigInfoBox : MonoBehaviour {
 
 	public void Reset()
 	{
+		source.Stop();
+		source.Play();
 		Scene loadedLevel = SceneManager.GetActiveScene ();
 		SceneManager.LoadScene (loadedLevel.name);
 

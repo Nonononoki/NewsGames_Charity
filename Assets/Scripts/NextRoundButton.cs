@@ -20,7 +20,7 @@ public class NextRoundButton : MonoBehaviour {
 		Resources.Money += Resources.MoneyIncrease - Resources.MoneyDecrease;
 
 		//increase population
-		Resources.Population = (int)(Resources.Population * (Resources.PopulationIncrease - Resources.PopulationDecrease)); 
+		Resources.Population = (int)(Resources.Population *(Resources.PopulationIncrease - Resources.PopulationDecrease)); 
 
 		Debug.Log (Resources.MoneyDecrease + "Euros lost because of maintenance!");
 

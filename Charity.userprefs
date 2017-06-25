@@ -1,24 +1,30 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\infoscripts\bigInfoBox.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NextRoundButton.cs">
     <Files>
-      <File FileName="Assets\Scripts\Farm.cs" Line="49" Column="1" />
-      <File FileName="Assets\Scripts\Resources.cs" Line="81" Column="29" />
-      <File FileName="Assets\Scripts\School.cs" Line="17" Column="39" />
-      <File FileName="Assets\Scripts\Well.cs" Line="27" Column="3" />
+      <File FileName="Assets\Scripts\Farm.cs" Line="23" Column="34" />
+      <File FileName="Assets\Scripts\Resources.cs" Line="7" Column="31" />
+      <File FileName="Assets\Scripts\School.cs" Line="27" Column="18" />
+      <File FileName="Assets\Scripts\Well.cs" Line="21" Column="34" />
       <File FileName="Assets\Scripts\MenuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NextRoundButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NextRoundButton.cs" Line="23" Column="115" />
       <File FileName="Assets\Scripts\PlayButton.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Building.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\infoscripts\FoodInfo.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\infoscripts\SchoolButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\infoscripts\PopulationInfo.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\infoscripts\PopulationInfo.cs" Line="11" Column="17" />
       <File FileName="Assets\Scripts\infoscripts\WaterInfo.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\infoscripts\infoBox.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\infoscripts\infoButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\infoscripts\bigInfoBox.cs" Line="78" Column="3" />
+      <File FileName="Assets\Scripts\infoscripts\bigInfoBox.cs" Line="41" Column="17" />
       <File FileName="Assets\Scripts\BoardScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Field.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Village.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BuildButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\infoscripts\EducationInfo.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\infoscripts\MoneyInfo.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\infoscripts\WellButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\infoscripts\FarmButton.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

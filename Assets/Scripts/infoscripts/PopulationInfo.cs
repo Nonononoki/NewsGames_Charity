@@ -12,7 +12,7 @@ public class PopulationInfo : MonoBehaviour {
 		s = "Population:  \n" +
 			"Start with a population of 1000. \n" +
 			"Population in increased by \n" +
-			"10% each round."
+			"100 each round."
 			;
 	}
 

@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class School : Building {
 
-	public int Cost;
-	public int baseMaintainance;
-	public int Maintainance;
-	public int Produce;
+	public float Cost;
+	public float baseMaintainance;
+	public float Maintainance;
+	public float Produce;
 
 
 	public static List<School> _schoolList;
 
 	// Use this for initialization
 	void Start() {
-		Maintainance = baseMaintainance * distance;
+		Maintainance = baseMaintainance * (0.5f + 0.5f*distance);
 
 		if (_schoolList == null)
 			_schoolList = new List<School> ();
@@ -24,7 +24,7 @@ public class School : Building {
 		//subtract money
 		GameObject resources = GameObject.Find ("Resources");
 		Resources r = resources.GetComponent<Resources> ();
-		r.Money -= Cost;
+		r.Money -= (int)Cost;
 
 		Debug.Log ("School");
 	}

@@ -10,7 +10,7 @@ public class Resources : MonoBehaviour {
 	public int Water = 0;
 	public int Education = 0;
 
-	public float PopulationIncrease = 1.1f; //increase in percentage
+	public float PopulationIncrease = 1.1f; 
 	public int MoneyIncrease = 400000;
 	public int FoodIncrease = 0;
 	public int WaterIncrease = 0;
@@ -75,8 +75,6 @@ public class Resources : MonoBehaviour {
 	{
 		Reset ();
 
-
-
 			
 		if(Farm._farmList != null)
 			foreach (Farm f in Farm._farmList) {
@@ -90,8 +88,8 @@ public class Resources : MonoBehaviour {
 			}
 		if(School._schoolList != null)
 			foreach (School s in School._schoolList) {
-				EducationIncrease += s.Produce;
-				MoneyDecrease += s.Maintainance;
+				EducationIncrease += (int)s.Produce;
+				MoneyDecrease += (int)s.Maintainance;
 			}
 
 
