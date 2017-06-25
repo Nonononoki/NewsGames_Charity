@@ -13,12 +13,14 @@ public class BoardScript : MonoBehaviour {
 	public int villageAmount;
 	GameObject[,] fields;
 	public GameObject village;
+	public List<Village> villages;
 
 	// Use this for initialization
 	void Start () {
 		int goods = villageAmount * 2;
 		int bads = villageAmount * 2;
 		fields = new GameObject[width,height];
+		villages = new List<Village>();
 		float posX = 0;
 		float posY = 0;
 		for (int i=0; i<width;i++)
@@ -28,7 +30,7 @@ public class BoardScript : MonoBehaviour {
 
 			for (int j = 0; j < width; j++) {
 				GameObject field = Instantiate (normalField, new Vector3 (posX,posY,0), Quaternion.identity);
-				field.GetComponent<Field>().position = new Vector2 (posX, posY);
+				field.GetComponent<Field>().position = new Vector2 (i, j);
 				fields [i,j] = field;
 				posX+=normalField.GetComponent<SpriteRenderer>().bounds.size.x;
 			}
@@ -71,8 +73,9 @@ public class BoardScript : MonoBehaviour {
 
 			Field fieldScript = fields [x, y].GetComponent<Field> ();
 
-			if (!fieldScript.hasObject) {
+			if (!fieldScript.hasObject && fields[x,y].gameObject.tag!="good" && fields[x,y].gameObject.tag!="bad") {
 				fieldScript.Build (village);
+
 				Debug.Log ("ayyy");
 			} else {
 				i--;

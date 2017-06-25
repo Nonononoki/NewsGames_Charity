@@ -15,12 +15,14 @@ public class Field : MonoBehaviour {
 
 	void Awake(){
 		source = GetComponent<AudioSource> ();
+		GameObject board = GameObject.Find ("Board");
+		boardScript =(BoardScript) board.GetComponent (typeof(BoardScript));
 	}
 
 	void Start () {
-		GameObject board = GameObject.Find ("Board");
+		
 		resources = GameObject.Find ("Resources");
-		boardScript =(BoardScript) board.GetComponent (typeof(BoardScript));
+
 
 	}
 
@@ -36,21 +38,34 @@ public class Field : MonoBehaviour {
 		building = Instantiate (pBuilding, new Vector3(transform.position.x, transform.position.y,-10), Quaternion.identity);
 		var script=building.GetComponent<Building>();
 		script.multiplier = multiplier;
+		script.position = this.position;
 		hasObject = true;
-		source.PlayOneShot (clickSound);
+		if (building.tag == "village") {
+			boardScript.villages.Add (building.GetComponent<Village> ());
+		} else {
+			CalcDistance (script);
+		}
 
 	}
 
+	void CalcDistance(Building script){
+		int dist = 100000;
+		foreach (var village in boardScript.villages) {
+			int tempDist = (int)Mathf.Max (Mathf.Abs(script.position.x-village.position.x),Mathf.Abs(script.position.y-village.position.y) );
+			if(dist>tempDist){
+				dist = tempDist;}
+		}	
+		script.distance = dist;
+	}
+
+
 	void OnMouseDown(){
 		Resources r = resources.GetComponent<Resources> ();
-
-
-
 		//can only build if you have some money
 		if (hasObject == false && boardScript.objectToBuild!=null && r.Money > 0) {
 			
 			Build (boardScript.objectToBuild);
-
+			source.PlayOneShot (clickSound);
 		}
 
 

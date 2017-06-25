@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class School : Building {
 
-	public int Cost { private set; get; }
-	public int Maintainance { private set; get; }
-	public int Produce { private set; get; }
+	public int Cost;
+	public int baseMaintainance;
+	public int Maintainance;
+	public int Produce;
 
 
 	public static List<School> _schoolList;
 
 	// Use this for initialization
 	void Start() {
-
-		Produce = 200;
-		Cost = 200000;
-		Maintainance = 50000;
+		Maintainance = baseMaintainance * distance;
 
 		if (_schoolList == null)
 			_schoolList = new List<School> ();

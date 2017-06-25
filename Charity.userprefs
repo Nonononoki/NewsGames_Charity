@@ -1,23 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\infoscripts\bigInfoBox.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\School.cs">
     <Files>
-      <File FileName="Assets\Scripts\infoscripts\FarmButton.cs" Line="15" Column="24" />
-      <File FileName="Assets\Scripts\infoscripts\WellButton.cs" Line="31" Column="3" />
-      <File FileName="Assets\Scripts\infoscripts\MoneyInfo.cs" Line="13" Column="36" />
-      <File FileName="Assets\Scripts\infoscripts\EducationInfo.cs" Line="15" Column="16" />
-      <File FileName="Assets\Scripts\infoscripts\FoodInfo.cs" Line="31" Column="3" />
-      <File FileName="Assets\Scripts\infoscripts\WaterInfo.cs" Line="31" Column="3" />
-      <File FileName="Assets\Scripts\infoscripts\PopulationInfo.cs" Line="13" Column="37" />
-      <File FileName="Assets\Scripts\infoscripts\bigInfoBox.cs" Line="22" Column="1" />
-      <File FileName="Assets\Scripts\infoscripts\infoButton.cs" Line="23" Column="66" />
-      <File FileName="Assets\Scripts\NextRoundButton.cs" Line="46" Column="20" />
+      <File FileName="Assets\Scripts\Farm.cs" Line="11" Column="27" />
+      <File FileName="Assets\Scripts\Resources.cs" Line="77" Column="3" />
+      <File FileName="Assets\Scripts\School.cs" Line="17" Column="46" />
+      <File FileName="Assets\Scripts\Well.cs" Line="14" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\mat\Documents\Charity\Assets\Scripts\Well.cs" line="19" column="29" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

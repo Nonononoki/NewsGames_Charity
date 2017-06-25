@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Farm : Building {
 
-	public float baseCost { private set; get; }
+	public float baseCost;
 	public float Cost{ private set; get; }
+	public float baseMaintainance;
 	public float Maintainance { private set; get; }
-	public float baseProduce { private set; get; }
+	public float baseProduce;
 	public float Produce { private set; get; }
 
 
@@ -16,10 +17,11 @@ public class Farm : Building {
 	// Use this for initialization
 	void Start() {
 
-		baseCost = 100000;
-		Cost = baseCost * multiplier;
-		Maintainance = 50000;
-		baseProduce = 400;
+
+		Cost = baseCost * multiplier*multiplier;
+
+		Maintainance = baseMaintainance * distance;
+
 		Produce = baseProduce * multiplier;
 
 		if (_farmList == null)

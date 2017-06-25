@@ -57,8 +57,10 @@ public class bigInfoBox : MonoBehaviour {
 
 	public void OnMouseDown()
 	{
-		if (!reset)
+		if (!reset) {
 			Hide ();
+
+		}
 		else
 			Reset ();
 	}

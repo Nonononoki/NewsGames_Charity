@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Well : Building {
 
-	public float baseCost { private set; get; }
+	public float baseCost;
 	public float Cost{ private set; get; }
+	public float baseMaintainance;
 	public float Maintainance { private set; get; }
-	public float baseProduce { private set; get; }
+	public float baseProduce;
 	public float Produce { private set; get; }
 
 	public static List<Well> _wellList;
@@ -15,10 +16,10 @@ public class Well : Building {
 	// Use this for initialization
 	void Start() {
 
-		baseCost = 50000;
-		Cost = baseCost*multiplier;
-		Maintainance = 10000;
-		baseProduce = 200;
+
+		Cost = baseCost*multiplier*multiplier;
+		Maintainance = baseMaintainance*distance;
+
 		Produce = baseProduce * multiplier;
 
 		if (_wellList == null)
