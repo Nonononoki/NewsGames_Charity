@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BAE40B7B-10FF-6060-B859-F04318CCC9C7}</ProjectGuid>
+    <ProjectGuid>{574F5D28-99BE-0CC3-6A2F-3C329F95AAD6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,9 +58,15 @@
      <Compile Include="Assets\Scripts\School.cs" />
      <Compile Include="Assets\Scripts\Village.cs" />
      <Compile Include="Assets\Scripts\Well.cs" />
+     <Compile Include="Assets\Scripts\infoscripts\EducationInfo.cs" />
      <Compile Include="Assets\Scripts\infoscripts\FarmButton.cs" />
+     <Compile Include="Assets\Scripts\infoscripts\FoodInfo.cs" />
+     <Compile Include="Assets\Scripts\infoscripts\MoneyInfo.cs" />
+     <Compile Include="Assets\Scripts\infoscripts\PopulationInfo.cs" />
      <Compile Include="Assets\Scripts\infoscripts\SchoolButton.cs" />
+     <Compile Include="Assets\Scripts\infoscripts\WaterInfo.cs" />
      <Compile Include="Assets\Scripts\infoscripts\WellButton.cs" />
+     <Compile Include="Assets\Scripts\infoscripts\bigInfoBox.cs" />
      <Compile Include="Assets\Scripts\infoscripts\infoBox.cs" />
      <Compile Include="Assets\Scripts\infoscripts\infoButton.cs" />
      <None Include="Assets\sprites\credits.txt" />

@@ -12,7 +12,7 @@ public class SchoolButton : MonoBehaviour {
 		s = "School:  \n" +
 			"Base Cost: 200,000. \n" +
 			"Maintain Cost: 50,000. \n" +
-			"Produces: 200";
+			"Raises Education level by 200.";
 	}
 
 	// Update is called once per frame

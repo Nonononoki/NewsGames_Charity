@@ -12,7 +12,7 @@ public class FarmButton : MonoBehaviour {
 		s = "Farm:  \n" +
 			"Base Cost: 100,000. \n" +
 			"Maintain Cost: 50,000. \n" +
-			"Produces: 400";
+			"Produces: 400 Food.";
 	}
 
 	// Update is called once per frame

@@ -1,17 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BuildButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\infoscripts\bigInfoBox.cs">
     <Files>
-      <File FileName="Assets\Scripts\Field.cs" Line="38" Column="35" />
-      <File FileName="Assets\Scripts\School.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Village.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BoardScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Building.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Farm.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Well.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Resources.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NextRoundButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BuildButton.cs" Line="26" Column="23" />
+      <File FileName="Assets\Scripts\infoscripts\FarmButton.cs" Line="15" Column="24" />
+      <File FileName="Assets\Scripts\infoscripts\WellButton.cs" Line="31" Column="3" />
+      <File FileName="Assets\Scripts\infoscripts\MoneyInfo.cs" Line="13" Column="36" />
+      <File FileName="Assets\Scripts\infoscripts\EducationInfo.cs" Line="15" Column="16" />
+      <File FileName="Assets\Scripts\infoscripts\FoodInfo.cs" Line="31" Column="3" />
+      <File FileName="Assets\Scripts\infoscripts\WaterInfo.cs" Line="31" Column="3" />
+      <File FileName="Assets\Scripts\infoscripts\PopulationInfo.cs" Line="13" Column="37" />
+      <File FileName="Assets\Scripts\infoscripts\bigInfoBox.cs" Line="22" Column="1" />
+      <File FileName="Assets\Scripts\infoscripts\infoButton.cs" Line="23" Column="66" />
+      <File FileName="Assets\Scripts\NextRoundButton.cs" Line="46" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

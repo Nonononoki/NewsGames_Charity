@@ -5,7 +5,7 @@ using UnityEngine;
 public class NextRoundButton : MonoBehaviour {
 
 	public Resources Resources;
-	public infoBox ib;
+	public bigInfoBox ib;
 
 	public void NextRound()
 	{
@@ -34,7 +34,7 @@ public class NextRoundButton : MonoBehaviour {
 			if (Lose ()) {
 				s = "No money left, you lost!";
 				Debug.Log ("No money left, you lost!");
-
+				ib.reset = true;
 				ib.Show (s);
 			}
 			ib.Show(s);
@@ -43,7 +43,7 @@ public class NextRoundButton : MonoBehaviour {
 		if (Win ()) {
 			s = "Everyone is educated! You Win!";
 			Debug.Log ("Everyone is educated! You Win!");
-
+			ib.reset = true;
 			ib.Show(s);
 		}
 
