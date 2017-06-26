@@ -11,8 +11,8 @@ public class WellButton : MonoBehaviour {
 	void Start () {
 		s = "Well:  \n" +
 			"Base Cost: 50,000. \n" +
-			"Maintain Cost: 10,000. \n" +
-			"Produces: 200 Water.";
+			"Base Maintain Cost: 10,000. \n" +
+			"Base Production: 300 Water.";
 	}
 
 	// Update is called once per frame

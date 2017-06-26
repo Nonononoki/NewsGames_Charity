@@ -10,9 +10,9 @@ public class FarmButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		s = "Farm:  \n" +
-			"Base Cost: 100,000. \n" +
-			"Maintain Cost: 50,000. \n" +
-			"Produces: 400 Food.";
+			"Base Cost: 75,000. \n" +
+			"Base Maintain Cost: 30,000. \n" +
+			"Base Production: 300 Food.";
 	}
 
 	// Update is called once per frame

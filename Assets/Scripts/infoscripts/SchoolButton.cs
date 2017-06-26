@@ -10,8 +10,8 @@ public class SchoolButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		s = "School:  \n" +
-			"Base Cost: 200,000. \n" +
-			"Maintain Cost: 50,000. \n" +
+			"Base Cost: 100,000. \n" +
+			"Base Maintain Cost: 50,000. \n" +
 			"Raises Education level by 200.";
 	}
 
