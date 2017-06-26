@@ -64,6 +64,14 @@ public class bigInfoBox : MonoBehaviour {
 
 	}
 
+	public void Show()
+	{
+		sr.color = new Color (1f, 1f, 1f, 1f);
+		tm.text = s;
+		col.enabled = true;
+
+	}
+
 
 	public void OnMouseDown()
 	{

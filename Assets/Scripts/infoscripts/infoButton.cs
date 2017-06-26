@@ -20,6 +20,8 @@ public class infoButton : MonoBehaviour {
 			"You have to import food and water if you cannot provide them. \n" +
 			"You need to raise the education level to the population level \n" +
 			"in order to win. \n" + 
+			"The further away a building from the nearest village is, the \n" +
+			"higher is its maintainance cost.\n" +
 			"You will lose if you cannot support the villages anymore. \n"
 			;
 	}
